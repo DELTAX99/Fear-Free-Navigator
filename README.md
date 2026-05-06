@@ -49,7 +49,7 @@ A safety-conscious urban routing system that calculates optimal paths based on a
    - Access the frontend at the URL provided by Vite (usually `http://localhost:5173`).
 
 ## Project Report
-For a detailed technical breakdown, methodology, and mathematical proofs, refer to the [University Project Report](university_project_report.md) (if included in repo).
+For a detailed technical breakdown, methodology, and mathematical proofs, refer to the [University Project Report](project_report.md) (if included in repo).
 
 ## License
 MIT
