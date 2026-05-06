@@ -1,9 +1,9 @@
 # University Project Report: Fear-Free Night Navigator
 
 **Project Title:** Fear-Free Night Navigator: A Multi-City Safety-Prioritized Routing Infrastructure  
-**Author:** [USER NAME]  
-**Institution:** [UNIVERSITY NAME]  
-**Department:** [DEPARTMENT NAME]  
+**Author:** Sai Vaishno Mohanty  
+**Institution:** Lovely Professional University  
+**Department:** School of Computer Science and Engineering 
 **Date:** May 6, 2026  
 
 ---
