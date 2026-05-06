@@ -63,6 +63,34 @@ def fetch_manhattan_crime_data(app_token=None):
         print(f"Error fetching Manhattan crime data: {e}")
         return []
 
+def fetch_detroit_crime_data(app_token=None):
+    print("Fetching live Crime Data for Detroit from Detroit Open Data Portal...")
+    # Detroit Crime Data (RMS) - Last 30 days
+    url = "https://data.detroitmi.gov/resource/89tr-v7gh.json?$limit=2000&$order=incident_timestamp DESC"
+    headers = {}
+    if app_token:
+        headers['X-App-Token'] = app_token
+
+    try:
+        response = requests.get(url, headers=headers)
+        data = response.json()
+        
+        crime_points = []
+        for incident in data:
+            if incident.get('latitude') is not None and incident.get('longitude') is not None:
+                try:
+                    lat = float(incident['latitude'])
+                    lon = float(incident['longitude'])
+                    crime_points.append((lon, lat))
+                except ValueError:
+                    continue
+        
+        print(f"Successfully fetched and mapped {len(crime_points)} recent real crime incidents for Detroit.")
+        return crime_points
+    except Exception as e:
+        print(f"Error fetching Detroit crime data: {e}")
+        return []
+
 def map_crimes_to_nodes(G, crime_points):
     if not crime_points:
         return {}
@@ -158,7 +186,7 @@ def main():
     
     cities = [
         {"name": "Manhattan, New York City, New York, USA", "file": "graph_manhattan.pkl", "fetcher": fetch_manhattan_crime_data},
-        {"name": "Detroit, Michigan, USA", "file": "graph_detroit.pkl", "fetcher": fetch_manhattan_crime_data} # Placeholder fetcher
+        {"name": "Detroit, Michigan, USA", "file": "graph_detroit.pkl", "fetcher": fetch_detroit_crime_data}
     ]
 
     for city in cities:
