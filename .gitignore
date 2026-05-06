@@ -28,7 +28,6 @@ yarn-error.log*
 backend/graph_*.pkl
 !backend/graph_manhattan.pkl
 !backend/graph_chicago.pkl
-!backend/graph_detroit.pkl
 !backend/graph.pkl
 
 # Environment
