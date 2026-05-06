@@ -158,7 +158,7 @@ def main():
     
     cities = [
         {"name": "Manhattan, New York City, New York, USA", "file": "graph_manhattan.pkl", "fetcher": fetch_manhattan_crime_data},
-        {"name": "Chicago, Illinois, USA", "file": "graph_chicago.pkl", "fetcher": fetch_chicago_crime_data}
+        {"name": "Detroit, Michigan, USA", "file": "graph_detroit.pkl", "fetcher": fetch_manhattan_crime_data} # Placeholder fetcher
     ]
 
     for city in cities:

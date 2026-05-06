@@ -33,7 +33,7 @@ class RouteRequest(BaseModel):
 @app.on_event("startup")
 def load_data():
     global graphs, engines
-    for city, file in [("manhattan", "graph_manhattan.pkl"), ("chicago", "graph_chicago.pkl")]:
+    for city, file in [("manhattan", "graph_manhattan.pkl"), ("detroit", "graph_detroit.pkl")]:
         path = os.path.join(os.path.dirname(__file__), file)
         if os.path.exists(path):
             try:
@@ -52,7 +52,7 @@ def health():
 def get_routes(req: RouteRequest):
     # Auto-detect city by longitude
     # Manhattan: ~ -73.9, Chicago: ~ -87.6
-    city = "chicago" if req.start_lon < -79 else "manhattan"
+    city = "detroit" if req.start_lon < -79 else "manhattan"
     
     G = graphs.get(city)
     engine = engines.get(city)

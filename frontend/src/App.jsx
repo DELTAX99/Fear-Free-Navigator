@@ -78,10 +78,10 @@ export default function App() {
       center = [-73.997232, 40.730610];
       start = { lon: -73.997, lat: 40.725 };
       end = { lon: -73.990, lat: 40.735 };
-    } else if (city === 'chicago') {
-      center = [-87.6298, 41.8781];
-      start = { lon: -87.629, lat: 41.875 };
-      end = { lon: -87.635, lat: 41.880 };
+    } else if (city === 'detroit') {
+      center = [-83.0458, 42.3314];
+      start = { lon: -83.05, lat: 42.33 };
+      end = { lon: -83.04, lat: 42.34 };
     }
 
     if (center && start && end) {
@@ -190,14 +190,14 @@ export default function App() {
             className="w-full bg-black/50 border border-gray-700 rounded-lg p-2.5 text-sm outline-none focus:border-indigo-500 transition-colors"
           >
             <option value="manhattan">New York City (Manhattan)</option>
-            <option value="chicago">Chicago, IL</option>
+            <option value="detroit">Detroit, MI</option>
           </select>
         </div>
 
         {/* Instructions */}
         <div className="bg-indigo-900/30 border border-indigo-500/30 rounded-lg p-3 text-sm text-indigo-200 flex gap-3">
           <MapPin className="w-5 h-5 shrink-0 text-indigo-400" />
-          <p>Drag the <strong>Green marker</strong> (Start) and <strong>Red marker</strong> (End) on the map to set your locations anywhere in {city === 'manhattan' ? 'Manhattan' : 'Chicago'}.</p>
+          <p>Drag the <strong>Green marker</strong> (Start) and <strong>Red marker</strong> (End) on the map to set your locations anywhere in {city === 'manhattan' ? 'Manhattan' : 'Detroit'}.</p>
         </div>
 
         {/* Persona & Time Controls */}
